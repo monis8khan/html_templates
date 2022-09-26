@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <h1 class="heading-1">Testimonial Section</h1>
+    <div id="testimonial-container" class="container animate">
+        <div class="section-heading">
+            <div class="testimonial">
+                <p id="testimonial" class="testimonial-message">Including client testimonials on your website is a super effective
+                    strategy to convince someone to book your service, purchase your product, sign up for your class, or
+                    whatever it is you do! When people can hear real life stories of how your business totally changed
+                    their life (or how they absolutely LOVED the product they received from you, etc) , they’ll want to
+                    get it on the magic for themselves. </p>
+            </div>
+            <div>
+                <h3 id="client-name" class="client-name">Monis</h3>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        let selectedIndex = 1;
+        let testimonials=[{
+            "name": "Monis",
+            "message":`Including client testimonials on your website is a super effective
+                    strategy to convince someone to book your service, purchase your product, sign up for your class, or
+                    whatever it is you do! When people can hear real life stories of how your business totally changed`
+        },{
+            "name": "Tesla",
+            "message":`Including client testimonials on your website is a super effective
+                    strategy to convince someone to book your service, purchase your product, sign up for your class, or
+                    whatever it is you do! When people can hear real life stories of how your business totally changed
+                    their life (or how they absolutely LOVED the product they received from you, etc) , they’ll want to
+                    get it on the magic for themselves.`
+        },{
+            "name": "Wakanda Termoddy",
+            "message":`Including client testimonials on your website is a super effective
+                    strategy to convince someone to book your service, purchase your product, sign up for your class, or
+                    whatever it is you do! When people can hear real life stories of how your business totally changed
+                    their life (or how they absolutely LOVED the product they received from you, etc) , they’ll want to
+                    get it on the magic for themselves. sign up for your class, or
+                    whatever it is you do! When people can hear real life stories of how your business totally changed`
+        }]
+
+        setInterval(()=>{
+            slideShow()
+        }, 5000)
+
+        const slideShow = () => {
+            let container = document.getElementById('testimonial-container');
+            container.classList.toggle("hide");
+            setTimeout(()=>{
+            let testimonial = document.getElementById("testimonial");
+            let client_name = document.getElementById("client-name");
+            testimonial.innerHTML = testimonials[selectedIndex].message;
+            client_name.innerHTML = testimonials[selectedIndex].name;
+            selectedIndex >= 2 ? selectedIndex = 0 : selectedIndex ++ 
+                container.classList.toggle("hide")
+            }, 800)
+        }
+    </script>
+</body>
+
+</html>
